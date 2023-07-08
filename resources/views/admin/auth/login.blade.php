@@ -30,9 +30,10 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">تسجيل الدخول</p>
 
-                <form action="../../index3.html" method="post">
+                <form action="{{ route('admin.login') }}" method="post">
+                    @scrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="اسم المستخدم">
+                        <input type="text" name="username" class="form-control" placeholder="اسم المستخدم">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -40,7 +41,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="كلمة المرور">
+                        <input type="password" name="password" class="form-control" placeholder="كلمة المرور">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
