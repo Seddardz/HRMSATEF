@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/admin/login', function () {
-    return view('admin.auth.login');
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'guest'],function(){
+    Route::get('login',[LoginController::class,'show_login_view'])->name('admin.showlogin');
 });
