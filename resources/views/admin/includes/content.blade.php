@@ -26,4 +26,4 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-  </div>v
+  </div>
