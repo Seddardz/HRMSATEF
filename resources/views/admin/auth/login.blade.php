@@ -35,6 +35,11 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
+@if (Session::has('error'))
+<div class="alert alert-danger text-center" role="alert">
+{{ Session::get('error') }}
+</div>
+@endif
                 <p class="login-box-msg">تسجيل الدخول</p>
 
                 <form action="{{ route('admin.login') }}" method="post">
