@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -24,7 +25,7 @@ return view ('admin.auth.login');
 */
     }
 
-    public function login(){
+    public function login(LoginRequest $request){
 
     }
 }

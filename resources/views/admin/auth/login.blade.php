@@ -19,7 +19,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="{{ asset('assets/admin/fonts/SansPro/SansPro.css') }}" rel="stylesheet">
 </head>
-
+<style>
+    input.form-control{
+        text-align:right;
+    }
+    p {
+        text-align: right;
+    }
+</style>
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
@@ -31,7 +38,7 @@
                 <p class="login-box-msg">تسجيل الدخول</p>
 
                 <form action="{{ route('admin.login') }}" method="post">
-                    @scrf
+                    @csrf
                     <div class="input-group mb-3">
                         <input type="text" name="username" class="form-control" placeholder="اسم المستخدم">
                         <div class="input-group-append">
@@ -40,6 +47,9 @@
                             </div>
                         </div>
                     </div>
+                    @error('username')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                     <div class="input-group mb-3">
                         <input type="password" name="password" class="form-control" placeholder="كلمة المرور">
                         <div class="input-group-append">
@@ -48,7 +58,9 @@
                             </div>
                         </div>
                     </div>
-
+                    @error('password')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
         <div class="row">
 
           <div class="col-12">
