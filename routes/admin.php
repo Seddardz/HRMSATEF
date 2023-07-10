@@ -23,3 +23,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'guest:admin'
     Route::get('login',[LoginController::class,'show_login_view'])->name('admin.showlogin');
     Route::post('login', [LoginController::class, 'login'])->name('admin.login');
 });
+
+Route::fallback(function () {
+    return redirect()->route('admin.showlogin');
+});
